@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>firsthomework</title>
+</head>
+<body>
+    <p id="rice"></p>
+    <p id="sugar"></p>
+    <p id="wheat"></p>
+    <p id="total"></p>
+    <p id="updated_total"></p>
+
+    <script >
+ let name1 = "Rice",rice_price = 50, rice_qty = 2;
+ let name2 = "Sugar",sugar_price = 40, sugar_qty = 3;
+    let name3 = "Wheat",wheat_price = 30, wheat_qty = 4;
+    let rice_cost = rice_price * rice_qty;
+    document.getElementById("rice").innerHTML =  " cost for Rice: ₹" + rice_cost;
+    console.log("Cost for Rice: ₹" + rice_cost);
+    let sugar_cost = sugar_price * sugar_qty;
+    document.getElementById("sugar").innerHTML =  " cost for Sugar: ₹" + sugar_cost;
+    console.log("Cost for Sugar: ₹" + sugar_cost);
+    let wheat_cost = wheat_price * wheat_qty;
+    document.getElementById("wheat").innerHTML =  " cost for Wheat: ₹" + wheat_cost;
+    console.log("Cost for Wheat: ₹" + wheat_cost);
+    let total_cost = rice_cost + sugar_cost + wheat_cost;
+    document.getElementById("total").innerHTML =  "Total cost: ₹" + total_cost;
+    console.log("Total cost: ₹" + total_cost);
+    rice_qty=4;
+    rice_cost = rice_price * rice_qty;
+    total_cost = rice_cost + sugar_cost + wheat_cost;
+    document.getElementById("updated_total").innerHTML =  "Updated Total cost: ₹" + total_cost;
+    console.log("Updated Total cost: ₹" + total_cost);
+
+
+</script>
+</body>
+ </html>
