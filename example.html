@@ -6,16 +6,24 @@
     <title>Document</title>
 </head>
 <body>
-    <label for="input_1">name</label>
-    <input type="text" id="input_1">
-    <label for="input_2">email</label>
-    <input type="text" id="input_2">
-    <button type="button">submit</button>
-   
+    <input type="text" id="ffname" placeholder="Enter name"><br>
+     <input type="text" id="mail" placeholder="Enter email"><br>
+     <button type="submit" onclick="change()">submit</button>
+     <h3 style="color:green;" id="fname" ></h3>
+     <p style="color:green;" id="result"></p>
+
+
 <script>
- document.getElementById
+     function change(){
+        let name=document.getElementById("ffname").value console.log(name);
+        let email=document.getElementById("mail").value console.log(email);
+    
+ document.getElementById("fname").innerHTML="hello"+name;
+ document.getElementById("result").innerHTML="Successfully submitted"+email;
+ document.getElementById("ffname").value=""
+  document.getElementById("mail").value=""
 
-
+     }
 
 </script>
 </body>

@@ -3,9 +3,28 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>classwork2</title>
+    <title>library system classwork2</title>
+
 </head>
 <body>
+<script>
+
+const mybook = {
+    title: "Harry poter",
+    author: "J.K Rowling",
+    year: 1997,
+
     
+    getSummary: function() {
+        return "The book '" + this.title + "' was written by " + this.author + " in " + this.year + ".";
+    }
+};
+
+function printBookSummary(bookObj) {
+    console.log(bookObj.getSummary());
+}
+
+printBookSummary(mybook);
+</script>
 </body>
 </html>

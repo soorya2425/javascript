@@ -6,6 +6,36 @@
     <title>second hw</title>
 </head>
 <body>
+    <script>
+    const contact1 = {
+    name: "Soorya",
+    phonenumber: "989557680",
+    email: "abc@gmail.com",
     
+    getInfo: function() {
+        return "Name: " + this.name + 
+               ", Phonenumber: " + this.phonenumber + 
+               ", Email: " + this.email;
+    }
+};
+    const contact2 = {
+    name: "Sreelal",
+    phonenumber: "9123456780",
+    email: "rahul@gmail.com",
+
+    getInfo: function() {
+        return "Name: " + this.name + 
+               ", Phonenumber: " + this.phonenumber + 
+               ", Email: " + this.email;
+    }
+};
+
+function printContactInfo(contact) {
+    console.log(contact.getInfo());
+}
+
+printContactInfo(contact1);
+printContactInfo(contact2);
+</script> 
 </body>
 </html>
