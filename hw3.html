@@ -1,0 +1,44 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+let userProfile = {
+  username: " CoolUser99 ",
+  bio: " I LOVE coding! JavaScript is Great!!! "
+};
+// Function to clean bio
+function cleanUserBio(profile) {
+  // Trim + lowercase
+  let cleanUsername = profile.username.trim().toLowerCase();
+  let cleanBio = profile.bio.trim().toLowerCase();
+
+  // Replace all "javascript" with "JS"
+  cleanBio = cleanBio.replaceAll("javascript", "JS");
+
+  // Count characters
+  let bioLength = cleanBio.length;
+
+  // Return new object
+  return {
+    username: cleanUsername,
+    bio: cleanBio,
+    length: bioLength
+  };
+}
+
+// Call function
+let result = cleanUserBio(userProfile);
+
+// Output
+console.log(result);
+</script>
+</body>
+</html>
