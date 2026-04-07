@@ -1,29 +1,17 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    <input type="text" id="ffname" placeholder="Enter name"><br>
-     <input type="text" id="mail" placeholder="Enter email"><br>
-     <button type="submit" onclick="change()">submit</button>
-     <h3 style="color:green;" id="fname" ></h3>
-     <p style="color:green;" id="result"></p>
 
+<!DOCTYPE html>
+<html>
+<body>
+
+<h2>JavaScript Math.pow()</h2>
+
+<p>Math.pow(x,y) returns the value of x to the power of y:</p>
+
+<p id="demo"></p>
 
 <script>
-     function change(){
-        let name=document.getElementById("ffname").value console.log(name);
-        let email=document.getElementById("mail").value console.log(email);
-    
- document.getElementById("fname").innerHTML="hello"+name;
- document.getElementById("result").innerHTML="Successfully submitted"+email;
- document.getElementById("ffname").value=""
-  document.getElementById("mail").value=""
-}
+document.getElementById("demo").innerHTML = Math.pow(5,9);
 </script>
+
 </body>
 </html>
-

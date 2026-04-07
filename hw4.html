@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>homework4</title>
+</head>
+<body>
+
+<h2>Game Result</h2>
+<p id="game"></p>
+
+<script>
+    let mysteryLevel = Math.floor(Math.random() * 50) + 1;
+    let userScoreString = "45";
+    let userScore = Number(userScoreString);
+    let difference = Math.abs(mysteryLevel - userScore);
+    let squareRoot = Math.sqrt(userScore);
+    let piValue = Math.PI;
+    let implicitResult = "20" * 5;
+    let maxValue = Math.max(10, 20, mysteryLevel);
+    let minValue = Math.min(10, 20, mysteryLevel);
+
+
+    document.getElementById("game").innerHTML =
+        "Mystery Level: " + mysteryLevel + "<br>" +
+        "User Score (String): " + userScoreString + "<br>" +
+        "User Score (Number): " + userScore + "<br>" +
+        "Absolute Difference: " + difference + "<br>" +
+        "Square Root of Score: " + squareRoot + "<br>" +
+        "Value of Pi: " + piValue + "<br>" +
+        "Implicit Conversion ('20' * 5): " + implicitResult + "<br>" +
+        "Maximum Value: " + maxValue + "<br>" +
+        "Minimum Value: " + minValue;
+</script>
+
+</body>
+</html>
+ 

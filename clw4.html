@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>classwork4</title>
+</head>
+<body>
+<h2>Small Statistics Widget</h2>
+<p id="statisticoutput"></p>
+
+<script>
+
+    let randomNumber = Math.floor(Math.random() * 100) + 1;
+    let userScoreString = "75";
+    let userScore = Number(userScoreString);
+    let difference = randomNumber - userScore;
+    let sqrtRounded = Math.round(Math.sqrt(userScore));
+    let piValue = Math.PI;
+    let implicitResult = "50" * 2;
+
+
+    document.getElementById("statisticoutput").innerHTML =
+        "Random Number: " + randomNumber + "<br>" +
+        "User Score (String): " + userScoreString + "<br>" +
+        "User Score (Number): " + userScore + "<br>" +
+        "Difference: " + difference + "<br>" +
+        "Rounded Square Root: " + sqrtRounded + "<br>" +
+        "Value of PI: " + piValue + "<br>" +
+        "Implicit Conversion Result ('50' * 2): " + implicitResult;
+</script>
+</body>
+</html>
+    
