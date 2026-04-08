@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Item Return Check</title>
+</head>
+<body>
+
+<h2>Online Store - Return Check</h2>
+
+<button onclick="checkReturn()">Check Return Eligibility</button>
+
+<p id="result"></p>
+
+<script>
+function checkReturn() {
+
+    // Step 1: Create object
+    let order = {
+        itemName: "Headphones",
+        isDelivered: true,
+        daysSinceDelivery: 5
+    };
+
+    // Step 2: Check return eligibility WITHOUT if-else
+    let message = (order.isDelivered && order.daysSinceDelivery <= 7)
+                  ? "Eligible for Return"
+                  : "Return Period Expired";
+
+    document.getElementById("result").innerText = message;
+
+    // Step 3: Check if itemName exists
+    console.log("itemName exists:", "itemName" in order);
+
+    // Step 4: Remove daysSinceDelivery property
+    delete order.daysSinceDelivery;
+
+    console.log("Updated object:", order);
+}
+</script>
+
+</body>
+</html>
