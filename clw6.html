@@ -1,0 +1,60 @@
+
+    
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Grocery Product List</title>
+</head>
+<body>
+
+<h2>Product List</h2>
+<button onclick="showProducts()">Show Products</button>
+
+<p id="output"></p>
+
+<script>
+function showProducts() {
+
+    // Step 1: Arrays of product names and prices
+    let productNames = ["Apple", "Banana", "Orange", "Grapes"];
+    let productPrices = [50, 30, 60, 70];
+
+    let output = "";
+
+    // Step 2: Merge arrays
+    let products = [];
+    for (let i = 0; i < productNames.length; i++) {
+        products.push("Product: " + productNames[i] + " - Price: " + productPrices[i]);
+    }
+
+    // Step 3: Display all products
+    output += "<b>All Products:</b><br>";
+    for (let i = 0; i < products.length; i++) {
+        output += products[i] + "<br>";
+    }
+
+    // Step 4: Filter products with price > 50
+    output += "<br><b>Products with Price > 50:</b><br>";
+    for (let i = 0; i < productPrices.length; i++) {
+        if (productPrices[i] > 50) {
+            output += "Product: " + productNames[i] + " - Price: " + productPrices[i] + "<br>";
+        }
+    }
+
+    // Step 5: Add new product
+    productNames.push("Watermelon");
+    productPrices.push(80);
+
+    // Step 6: Display updated list
+    output += "<br><b>Updated Product List:</b><br>";
+    for (let i = 0; i < productNames.length; i++) {
+        output += "Product: " + productNames[i] + " - Price: " + productPrices[i] + "<br>";
+    }
+
+    document.getElementById("output").innerHTML = output;
+}
+</script>
+
+</body>
+</html>
+    
