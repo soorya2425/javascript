@@ -1,0 +1,59 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Student Result Dashboard</title>
+</head>
+<body>
+
+  <h2>Student Result Dashboard</h2>
+  <button onclick="showResults()">Show Results</button>
+
+  <div id="output"></div>
+
+  <script>
+    function showResults() {
+
+      const students = [
+        { name: "Akhil", score: 75 },
+        { name: "Meera", score: 55 },
+        { name: "Rahul", score: 92 },
+        { name: "Anu", score: 30 },
+        { name: "Vishnu", score: 68 }
+      ];
+
+      let result = "";
+
+      
+      const allNames = students.map(s => s.name);
+      result += "<h3>All Student Names:</h3>" + allNames.join(", ") + "<br>";
+
+      
+      const above60 = students.filter(s => s.score > 60).map(s => s.name);
+      result += "<h3>Students with Score > 60:</h3>" + above60.join(", ") + "<br>";
+
+
+      const total = students.reduce((sum, s) => sum + s.score, 0);
+      result += "<h3>Total Score:</h3>" + total + "<br>";
+
+    
+      const allPassed = students.every(s => s.score > 35);
+      result += "<h3>All Students Passed:</h3>" + (allPassed ? "Yes" : "No") + "<br>";
+
+
+      const topper = students.some(s => s.score > 90);
+      result += "<h3>Any Student Scored > 90:</h3>" + (topper ? "Yes" : "No") + "<br>";
+
+    
+      const sorted = [...students].sort((a, b) => b.score - a.score);
+      result += "<h3>Sorted Students (High to Low):</h3>";
+      sorted.forEach(s => {
+        result += s.name + " - " + s.score + "<br>";
+      });
+
+      document.getElementById("output").innerHTML = result;
+    }
+  </script>
+
+</body>
+</html>
