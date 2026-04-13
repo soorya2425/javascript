@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Event Reminder Tool</title>
+</head>
+<body>
+
+<h2>Event Reminder</h2>
+
+<label>Enter a past date:</label>
+<input type="date" id="dateInput">
+<br><br>
+
+<button onclick="calculateDetails()">Check Details</button>
+
+<p id="output"></p>
+
+<script>
+function calculateDetails() {
+    const input = document.getElementById("dateInput").value;
+
+    if (!input) {
+        document.getElementById("output").innerText = "Please select a date.";
+        return;
+    }
+
+    const pastDate = new Date(input);
+
+    const year = pastDate.getFullYear();
+    const day = pastDate.getDate();
+
+    const monthNames = [
+        "January", "February", "March", "April", "May", "June",
+        "July", "August", "September", "October", "November", "December"
+    ];
+    const month = monthNames[pastDate.getMonth()];
+
+    // Calculate years passed
+    const today = new Date();
+    let yearsPassed = today.getFullYear() - year;
+
+    const hasPassedThisYear =
+        today.getMonth() > pastDate.getMonth() ||
+        (today.getMonth() === pastDate.getMonth() && today.getDate() >= day);
+
+    if (!hasPassedThisYear) {
+        yearsPassed--;
+    }
+
+    // Custom message
+    let message = "";
+    if (yearsPassed >= 1) {
+        message = "It has been more than a year since that date.";
+    } else {
+        message = "It has been less than a year since that date.";
+    }
+
+    document.getElementById("output").innerText =
+        `Date: ${day} ${month}, ${year}\nYears Passed: ${yearsPassed}\n${message}`;
+}
+</script>
+
+</body>
+</html>

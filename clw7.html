@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Birthday Tracker</title>
+</head>
+<body>
+
+<h2>Birthday Tracker</h2>
+<button onclick="showDetails()">Show Birthday Details</button>
+
+<p id="result"></p>
+
+<script>
+// Create friend object
+const friend = {
+    name: "John",
+    birthDate: "1999-07-05"
+};
+
+// Function to get birthday details
+function getBirthdayDetails(friend) {
+    const birth = new Date(friend.birthDate);
+
+    const year = birth.getFullYear();
+    const day = birth.getDate();
+
+    const monthNames = [
+        "January", "February", "March", "April", "May", "June",
+        "July", "August", "September", "October", "November", "December"
+    ];
+    const month = monthNames[birth.getMonth()];
+
+    // Calculate age
+    const today = new Date();
+    let age = today.getFullYear() - year;
+
+    const hasBirthdayPassed =
+        today.getMonth() > birth.getMonth() ||
+        (today.getMonth() === birth.getMonth() && today.getDate() >= day);
+
+    if (!hasBirthdayPassed) {
+        age--;
+    }
+
+    return `${friend.name} was born on ${day} ${month}, ${year} and is ${age} years old.`;
+}
+
+// Display result on button click
+function showDetails() {
+    const result = getBirthdayDetails(friend);
+    document.getElementById("result").innerText = result;
+}
+</script>
+
+</body>
+</html>
