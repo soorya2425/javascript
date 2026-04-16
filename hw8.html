@@ -1,13 +1,60 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>eight hw</title>
 </head>
 <body>
-    <script>
-        
-    </script>
+
+<h2>Guess the Number Game</h2>
+
+<script>
+let chances = 5;
+let Attempts = 0;
+
+while (Attempts < chances) {
+
+    let input = prompt("Enter a number between 1 and 5:");
+    let num = Number(input);
+
+    if (num < 1 || num > 5 || isNaN(num)) {
+        alert("Invalid input");
+        continue; 
+    }
+
+    Attempts++;
+
+    let word = "";
+    switch (num) {
+        case 1:
+            word = "One";
+            break;
+        case 2:
+            word = "Two";
+            break;
+        case 3:
+            word = "Three";
+            break;
+        case 4:
+            word = "Four";
+            break;
+        case 5:
+            word = "Five";
+            break;
+    }
+
+    alert("You entered: " + word);
+
+    if (num === 3) {
+        alert("You guessed it right!");
+        break; 
+    } else {
+        alert("Wrong guess. Try again.");
+    }
+}
+
+if (Attempts === chances) {
+    alert("Game over");
+}
+</script>
 </body>
 </html>

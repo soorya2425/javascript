@@ -1,14 +1,62 @@
+
+
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>clw8</title>
+    <title>Grocery Calculator</title>
 </head>
 <body>
-    <script>
-       
-        
-    </script>
+
+<h2>Grocery Store Calculator</h2>
+
+<script>
+let purchases = 0;
+
+while (purchases < 5) {
+
+    let code = Number(prompt("Enter product code (1-Apple, 2-Banana, 3-Mango):"));
+    let qty = Number(prompt("Enter quantity:"));
+
+    let price = 0;
+    let product = "";
+
+    
+    switch (code) {
+        case 1:
+            product = "Apple";
+            price = 30;
+            break;
+        case 2:
+            product = "Banana";
+            price = 10;
+            break;
+        case 3:
+            product = "Mango";
+            price = 50;
+            break;
+        default:
+            alert("Invalid product code");
+            continue; 
+    }
+
+    let total = price * qty;
+
+    alert("Product: " + product + 
+          "\nQuantity: " + qty + 
+          "\nTotal Price: ₹" + total);
+
+    
+    if (total > 100) {
+        alert("High purchase");
+    } else {
+        alert("Normal purchase");
+    }
+
+    purchases++;
+}
+
+alert("5 purchases completed");
+</script>
+
 </body>
 </html>
