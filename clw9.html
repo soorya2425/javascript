@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>clw9</title>
+</head>
+<body>
+    <script>
+    
+
+function processComment(comment) {
+    let hasNumber = /\d/.test(comment);
+
+    let updatedComment = comment.replace(/\d+/g, "NUMBER");
+
+    return {
+        foundNumber: hasNumber,
+        updatedComment: updatedComment
+    };
+}
+
+let comment = "My son is 12 years old. Our flat number is 45 and contact is 9876543210.";
+
+let result = processComment(comment);
+
+console.log("Number Found:", result.foundNumber);
+console.log("Updated Comment:", result.updatedComment);
+</script>
+</body>
+</html>
