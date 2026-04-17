@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+       // JSON input
+let jsonText = `{
+  "name": "Soorya",
+  "email": "soorya@example.com",
+  "message": "Hello there!"
+}`;
+
+// Named arrow function
+let processUserMessage = () => {
+  try {
+    // Convert JSON text into JavaScript object
+    let user = JSON.parse(jsonText);
+
+    // Print message
+    console.log(`Message received from ${user.name}`);
+  } catch (error) {
+    // Handle errors
+    console.error("Error processing JSON:", error.message);
+  }
+};
+
+// Run the function
+processUserMessage();
+
+    </script>
+</body>
+</html>

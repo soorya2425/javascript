@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body><script>
+
+let jsonText = `{
+  "name": "Soorya",
+  "email": "soorya@example.com",
+  "message": "Thank you for your help!"
+}`;
+
+let checkFeedback = () => {
+  try {
+    
+    let user = JSON.parse(jsonText);
+
+
+    let message = user.message.toLowerCase();
+
+    if (message.includes("thank")) {
+      console.log("Positive feedback received");
+    } else {
+      console.log("Feedback noted");
+    }
+
+  } catch (error) {
+    console.error("Error processing JSON:", error.message);
+  }
+};
+checkFeedback();
+</script>
+    
+</body>
+</html>
