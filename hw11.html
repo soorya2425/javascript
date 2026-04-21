@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>clw11</title>
+</head>
+<body>
+    <script>
+ // Create Book class
+class Book {
+  constructor(title, author, price) {
+    this.title = title;
+    this.author = author;
+    this.price = price;
+  }
+
+  // Getter for title
+  getTitle() {
+    return this.title;
+  }
+
+  // Getter for author
+  getAuthor() {
+    return this.author;
+  }
+
+  // Setter for price (only valid if number and > 0)
+  setPrice(newPrice) {
+    if (typeof newPrice === "number" && newPrice > 0) {
+      this.price = newPrice;
+      console.log("Price updated successfully.");
+    } else {
+      console.log("Invalid price! Price must be a number greater than 0.");
+    }
+  }
+
+  // Method to display book details
+  displayDetails() {
+    console.log("Title:", this.title);
+    console.log("Author:", this.author);
+    console.log("Price:", this.price);
+  }
+}
+
+// Create a Book object
+const book1 = new Book("The Alchemist", "Paulo Coelho", 500);
+
+// Try updating price with valid value
+book1.setPrice(650);
+
+// Try updating price with invalid values
+book1.setPrice(-100);     // invalid
+book1.setPrice("abc");    // invalid
+
+// Print final book details
+console.log("\nFinal Book Details:");
+book1.displayDetails();
+    </script>
+</body>
+</html>

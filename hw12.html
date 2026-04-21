@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Feedback Form</title>
+</head>
+<body>
+
+<h2>Feedback Form</h2>
+
+<form id="feedbackForm">
+    <input type="text" id="name" placeholder="Enter your name"><br><br>
+    <textarea id="feedback" placeholder="Enter your feedback"></textarea><br><br>
+    <button type="submit">Submit</button>
+</form>
+
+<h3 id="displayName"></h3>
+<p id="displayFeedback"></p>
+<p id="message"></p>
+
+<script>
+
+    // 1. Selecting elements (DOM Access)
+    const form = document.getElementById("feedbackForm");
+    const nameInput = document.getElementById("name");
+    const feedbackInput = document.getElementById("feedback");
+
+    const displayName = document.getElementById("displayName");
+    const displayFeedback = document.getElementById("displayFeedback");
+    const message = document.getElementById("message");
+
+    // 2. Event Handling (submit)
+    form.addEventListener("submit", function(event) {
+
+        // 3. Prevent page reload
+        event.preventDefault();
+
+        // 4. Display values (DOM Manipulation)
+        displayName.textContent = "Name: " + nameInput.value;
+        displayFeedback.textContent = "Feedback: " + feedbackInput.value;
+
+        // 5. Styling using DOM
+        message.textContent = "Thanks for your feedback!";
+        message.style.color = "green";
+
+        // 6. setTimeout (remove message after 5 sec)
+        setTimeout(function() {
+            message.textContent = "";
+        }, 5000);
+    });
+
+    // Hover effects (Event Handling + Styling)
+    displayFeedback.addEventListener("mouseover", function() {
+        displayFeedback.style.color = "blue";
+    });
+
+    displayFeedback.addEventListener("mouseout", function() {
+        displayFeedback.style.color = "black";
+    });
+
+</script>
+
+</body>
+</html>
